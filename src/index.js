@@ -5,14 +5,46 @@ import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
-
+import {
+    createBrowserRouter,
+    RouterProvider,
+} from "react-router-dom";
+import ErrorPage from "./components/ErrorPage";
+import {Dashboard} from "./components/Dashboard";
+import {Products} from "./components/Products";
+import {Product} from "./components/Product";
 const container = document.getElementById('root');
 const root = createRoot(container);
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <App/>,
+    },
+    {
+        path: "/dashboard",
+        element: <Dashboard/>,
+        children: [
+            {
+                path: "/dashboard/products",
+                element: <Products/>,
+                errorElement: <ErrorPage />,
+                children: [
+                    {
+                        path: "/dashboard/products/:productId",
+                        element: <Product/>
+                    },
+                ]
+            },
+        ]
+    },
+
+
+]);
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+        <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>
 );

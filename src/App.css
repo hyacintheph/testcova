@@ -1,12 +1,7 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.primary-link{
+  background-color: #ff7c00;
 }
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-float infinite 3s ease-in-out;
@@ -36,4 +31,17 @@
   100% {
     transform: translateY(0px);
   }
+}
+.jumbotron{
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+.ol{
+  padding: 10px;
+  margin: 0;
+  list-style-type: square;
+}
+.more{
+  color: #ff7c00;
 }
