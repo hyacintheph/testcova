@@ -13,12 +13,17 @@ import ErrorPage from "./components/ErrorPage";
 import {Dashboard} from "./components/Dashboard";
 import {Products} from "./components/Products";
 import {Product} from "./components/Product";
+import {Login} from "./components/Login";
 const container = document.getElementById('root');
 const root = createRoot(container);
 const router = createBrowserRouter([
     {
         path: "/",
         element: <App/>,
+    },
+    {
+        path: "/signin",
+        element: <Login/>,
     },
     {
         path: "/dashboard",
@@ -28,12 +33,6 @@ const router = createBrowserRouter([
                 path: "/dashboard/products",
                 element: <Products/>,
                 errorElement: <ErrorPage />,
-                children: [
-                    {
-                        path: "/dashboard/products/:productId",
-                        element: <Product/>
-                    },
-                ]
             },
         ]
     },

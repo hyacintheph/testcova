@@ -4,6 +4,7 @@ import {addCart} from "../features/ProductSlice";
 
 export const ProductItem = ({product}) => {
     const dispatch = useDispatch();
+
     const handleAddCart = () => {
         dispatch(addCart(product))
     }
@@ -33,14 +34,19 @@ export const ProductItem = ({product}) => {
                     className="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">{product.rating}.0</span>
             </div>
             <div className={'grid md:grid-cols-2 gap-2'}>
-                <span>Ajouté le : {product.beginDate}</span>
-                <span>{findExpireDate() ? 'Expiré' : `Expire le : ${product.endDate}`}</span>
+                <span className={'text-sm'}>Date debut : {product.beginDate}</span>
+                <span className={'text-sm'}>{findExpireDate() ? 'Expiré' : `Date fin : ${product.endDate}`}</span>
             </div>
             <div className="flex mt-4 items-center justify-between">
-                <span className="text-3xl font-bold text-gray-900 dark:text-white">FCFA {product.cost}</span>
-                <button onClick={handleAddCart}
-                   className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add
-                    to cart</button>
+                <span className="text-xl font-bold text-gray-900 dark:text-white">FCFA {product.cost}</span>
+                {product.isInCart ? <span className={'text-green-500 font-bold'}>Mise bonus ajoutée</span>:
+                    findExpireDate() ? '' : <button onClick={handleAddCart}
+                                                     className="text-white bg-blue-700 hover:bg-blue-800
+                            focus:ring-4 focus:outline-none focus:ring-blue-300
+                            font-medium rounded-lg text-sm px-5 py-2.5 text-center
+                            dark:bg-blue-600 dark:hover:bg-blue-700
+                            dark:focus:ring-blue-800">Ajouter la mise bonus</button>
+                }
             </div>
         </div>
     </div>

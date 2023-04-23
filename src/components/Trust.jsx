@@ -7,7 +7,7 @@ import om from '../images/om.png'
 import prudential from '../images/prudential.png'
 import smobil from '../images/smobil.png'
 export const Trust = () => {
-    return <div className={'px-8 animate__animated animate__fadeInUp'}>
+    return <div data-aos="fade-down" className={'px-8'}>
         <div className={'text-center'}><h2 className={'text-4xl font-bold'}>Trusted by</h2></div>
         <div className="px-10 py-12 mt-2 grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>

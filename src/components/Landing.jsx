@@ -9,9 +9,9 @@ export const Landing = () => {
             style={{ backgroundImage: `url('${family}')`}}
         >
             <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
-                <h1 className="animate__animated animate__fadeInDown mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
+                <h1 data-aos="fade-up"  className=" mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
                     Insurrance accelorator in Africa</h1>
-                <p className="animate__animated animate__fadeInUp mb-8 text-xl font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
+                <p data-aos="fade-down" className=" mb-8 text-xl font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">
                     We are making insurance less hard to distribute, to buy, and to benefit from, for billion africans that have any form of insurance
                 </p>
                 <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
@@ -34,13 +34,14 @@ export const Landing = () => {
         </section>
         <div className="grid md:grid-cols-2 gap-2 md:gap-8 py-8 px-8 xl:py-28 xl:px-28">
             <div>
-                <iframe className="animate__animated animate__fadeInLeft mx-auto w-full lg:max-w-xl h-64 rounded-lg sm:h-96 shadow-xl"
+                <iframe data-aos="fade-right" className=" mx-auto w-full lg:max-w-xl h-64 rounded-lg sm:h-96 shadow-xl"
                         src={covavideo} title="Cova" frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen></iframe>
             </div>
             <div
-                className="animate__animated animate__fadeInRight rounded-lg p-2 md:p-12">
+                data-aos="fade-left"
+                className=" rounded-lg p-2 md:p-12">
                 <a href="#"
                    className="bg-purple-100 text-purple-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-purple-400 mb-2">
                 </a>
